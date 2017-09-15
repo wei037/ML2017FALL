@@ -1,4 +1,8 @@
-with open('words.txt') as f :
+import sys
+
+text = sys.argv[1]
+
+with open(text) as f :
 	data = f.read()
 f.close()
 data = data.replace('\n',' ')

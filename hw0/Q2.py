@@ -1,6 +1,8 @@
 from PIL import Image
+import sys
 
-im = Image.open('westbrook.jpg')
+text = sys.argv[1]
+im = Image.open(text)
 width, height = im.size
 pixels = im.load()
 
