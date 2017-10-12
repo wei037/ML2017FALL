@@ -102,13 +102,13 @@ def output(pred_list,text) :
     
     pd.DataFrame(out).to_csv(text , header = False , index = False) 
 
-train_df = load_train(sys.argv[1])
-test_df = load_test(sys.argv[2])
+train_df = load_train('train.csv')
+test_df = load_test(sys.argv[1])
 f_list = ['CO','O3','PM10','PM2.5',
      'RAINFALL','SO2','WD_HR','WIND_DIREC','WIND_SPEED','WS_HR','qua_PM10','qua_PM2.5']
 train_X , train_Y , test_X = feature_select(train_df,test_df,f_list) 
 b,w = linear_regression(train_X,train_Y,300000)
 
-output(pred(b,w,test_X),sys.argv[3])
+output(pred(b,w,test_X),sys.argv[2])
 
 
