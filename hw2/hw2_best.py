@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 import sys
-from keras.datasets import mnist
 from keras.models import Sequential
 from keras.layers.core import Dense, Dropout, Activation
 from keras import optimizers
