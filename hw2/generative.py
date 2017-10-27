@@ -19,7 +19,7 @@ class generative_model :
     def mean(self,X):
         return np.mean(X , axis = 0)
     def fit(self,X,Y):
-        X = self.scale(X)
+        #X = self.scale(X)
         self.class_0, self.class_1 = np.where(Y == 0) , np.where(Y == 1)
         self.u1, self.u2 = self.mean(X[self.class_1]),self.mean(X[self.class_0])
         self.N1, self.N2 = float(len(self.class_1[0])) , float(len(self.class_0[0]))  
@@ -54,6 +54,9 @@ def output(pred_list,text) :
     
     pd.DataFrame(out).to_csv(text , header = False , index = False) 
 
+def scale(self,X):
+    return (X - np.mean(X , axis = 0))/(np.std(X , axis = 0) + 1e-10)
+    
 
 def main():
     train_X = pd.read_csv(sys.argv[1]).as_matrix().astype('float')
@@ -61,6 +64,7 @@ def main():
     test_X = pd.read_csv(sys.argv[3]).as_matrix().astype('float')
     model = generative_model()
     model.fit(train_X,train_Y)
+    #test_X = scale(test_X)
     pred = model.predict(test_X)
     output(pred,sys.argv[4])
     
