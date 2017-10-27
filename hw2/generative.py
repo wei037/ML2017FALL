@@ -54,7 +54,7 @@ def output(pred_list,text) :
     
     pd.DataFrame(out).to_csv(text , header = False , index = False) 
 
-def scale(self,X):
+def scale(X):
     return (X - np.mean(X , axis = 0))/(np.std(X , axis = 0) + 1e-10)
     
 
