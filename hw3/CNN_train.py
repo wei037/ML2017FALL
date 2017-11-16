@@ -91,7 +91,7 @@ def fit(model , X_train , Y_train , augment = 0 , epochs = 20 , val_split = 0.0 
 def main() :
     #### load data and reshapeimport sys
 
-    X_train , Y_train = load_data.load(sys.argv[1])
+    X_train , Y_train = load_data.load(sys.argv[1] , 1)
     X_train = X_train.reshape(-1, 48, 48, 1)
 
     #### rescale

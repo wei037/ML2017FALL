@@ -28,7 +28,7 @@ def predict(text , data) :
     return pred
 
 def main() :
-    X_test = load_data.load(sys.argv[1])
+    X_test = load_data.load(sys.argv[1] , 0)
     X_test = X_test.reshape(-1, 48, 48, 1)
     X_test = X_test / 255
 
