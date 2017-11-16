@@ -1,5 +1,5 @@
 #! /bin/sh
 
-wget https://github.com/wei037/ML2017FALL/releases/download/0.0/64753.h5
-wget https://github.com/wei037/ML2017FALL/releases/download/0.0/65700.h5
+wget https://www.dropbox.com/s/hmi7i6jcrkkwhxk/65700.h5?dl=1
+wget https://www.dropbox.com/s/ssy2rb7cp5t3r1u/64753.h5?dl=1
 python3 ensamble_test.py $1 $2
