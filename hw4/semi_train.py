@@ -68,8 +68,8 @@ def fit(model , X_train , Y_train ,  val_split = 0.5 , epochs=5 , batch_size = 2
 def main() :
     #### load data and reshape
     wordmodel = word2vec.Word2Vec.load("wordDic128_semi.bin")
-    train_label = load_train('../data/training_label.txt')
-    X_train_no_label = load_nolabel('../data/training_nolabel.txt')
+    train_label = load_train('data/training_label.txt')
+    X_train_no_label = load_nolabel('data/training_nolabel.txt')
     X_train_label = np.array(train_label[:,1])
     Y_train_label = np.array(train_label[:,0])
     

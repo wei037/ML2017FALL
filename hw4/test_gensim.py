@@ -61,7 +61,7 @@ def word_embedding(model,text) :
     return np.array(sen2vec)
 
 def main() :
-    X_test = load_test('../data/testing_data.txt')  
+    X_test = load_test('data/testing_data.txt')  
     print ('Load test done...')
     dict_model = word2vec.Word2Vec.load("wordDic128_semi.bin")
     print ('Load model done...')

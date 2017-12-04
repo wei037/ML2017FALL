@@ -6,7 +6,7 @@ from keras.preprocessing.text import Tokenizer
 from keras.preprocessing import sequence
 from keras.models import Sequential
 from keras.layers import Dense, Convolution1D, Flatten, Dropout
-from keras.layers import LSTM, Embedding
+from keras.layers import LSTM, Embedding, GRU, SimpleRNN
 from keras.utils import np_utils
 import keras.callbacks
 
