@@ -27,7 +27,12 @@ def main() :
     Reader = DataReader()
     X_test = Reader.read_test(sys.argv[1])
 
-    pred = predict('86093.h5' , X_test)
+    pred = predict('85535.h5' , X_test)
+    std = 1.11689766115 
+    mean = 3.58171208604 
+    pred = pred*std + mean
+    print (max(pred))
+    print (min(pred))
     pred = np.clip(pred,1.0,5.0)
     print ('Predict done...')    
     output(pred , sys.argv[2])
